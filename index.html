@@ -22,7 +22,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            color: #333;
+            color: #375a7f;
         }
         p {
             color: #666;
@@ -35,26 +35,17 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let domain;
-
-            try {
-                // Get the top-level domain name from the browser's address bar
-                domain = window.top.location.hostname;
-            } catch (error) {
-                // If there's a cross-origin issue, fall back to normal hostname
-                domain = window.location.hostname;
-            }
-
+            let domain = window.location.hostname;
             document.getElementById("domain-name").textContent = domain;
         });
     </script>
 </head>
 <body>
     <div class="container">
-        <h1>For sale: "AgentC.ai" is available for sale</h1>
-        <p>If you're working through GoDaddy agents, they are wasting both our time.</p>
+        <h1>For Sale: the domain "<span id="domain-name"></span>" is available for purchase</h1>
         <p>If you'd like to buy this domain, contact directly at:</p>
         <img src="fun.png" alt="Contact">
     </div>
 </body>
 </html>
+
