@@ -35,8 +35,17 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let referrer = document.referrer;
-            let domain = referrer ? new URL(referrer).hostname : window.location.hostname;
+            let domain = window.location.hostname;
+
+            // Check if inside an iframe (masking case)
+            if (window.self !== window.top) {
+                try {
+                    domain = document.referrer ? new URL(document.referrer).hostname : domain;
+                } catch (e) {
+                    console.warn("Referrer blocked, using default domain.");
+                }
+            }
+
             document.getElementById("domain-name").textContent = domain;
         });
     </script>
@@ -50,4 +59,3 @@
     </div>
 </body>
 </html>
-
