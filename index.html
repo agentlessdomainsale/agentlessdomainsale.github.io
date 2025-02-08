@@ -4,16 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domain for Sale</title>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0FHT3FQRY"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-D0FHT3FQRY');
-    </script>
-    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,7 +22,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            color: #2a5d9e;
+            color: #004080; /* Medium-dark blue */
         }
         p {
             color: #666;
@@ -45,7 +35,8 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let domain = window.location.hostname;
+            let referrer = document.referrer;
+            let domain = referrer ? new URL(referrer).hostname : window.location.hostname;
             document.getElementById("domain-name").textContent = domain;
         });
     </script>
@@ -53,8 +44,8 @@
 <body>
     <div class="container">
         <h1>The domain "<span id="domain-name"></span>" is available for sale</h1>
-        <p>If you're working through GoDaddy agents, they are failing you in business.</p>
-        <p>Contact:</p>
+        <p>If you're working through GoDaddy agents, they are wasting both our time.</p>
+	<p>If you'd like to buy this domain, contact directly at:</p>
         <img src="fun.png" alt="Contact">
     </div>
 </body>
