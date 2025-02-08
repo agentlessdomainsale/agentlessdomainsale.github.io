@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain for Sale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            font-size: 18px;
+        }
+        .email {
+            font-weight: bold;
+            color: #0073e6;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let domain = window.location.hostname;
+            document.getElementById("domain-name").textContent = domain;
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>The domain "<span id="domain-name"></span>" is available for sale</h1>
+        <p>If you're working through GoDaddy agents, they are wasting both our time.</p>
+	<p>If you'd like to buy this domain, contact directly at:</p>
+        <img src="fun.png" alt="Contact">
+    </div>
+</body>
+</html>
+
