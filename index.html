@@ -22,7 +22,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            color: #004080; /* Medium-dark blue */
+            color: #333;
         }
         p {
             color: #666;
@@ -35,15 +35,14 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let domain = window.location.hostname;
+            let domain;
 
-            // Check if inside an iframe (masking case)
-            if (window.self !== window.top) {
-                try {
-                    domain = document.referrer ? new URL(document.referrer).hostname : domain;
-                } catch (e) {
-                    console.warn("Referrer blocked, using default domain.");
-                }
+            try {
+                // Get the top-level domain name from the browser's address bar
+                domain = window.top.location.hostname;
+            } catch (error) {
+                // If there's a cross-origin issue, fall back to normal hostname
+                domain = window.location.hostname;
             }
 
             document.getElementById("domain-name").textContent = domain;
@@ -54,7 +53,7 @@
     <div class="container">
         <h1>The domain "<span id="domain-name"></span>" is available for sale</h1>
         <p>If you're working through GoDaddy agents, they are wasting both our time.</p>
-	<p>If you'd like to buy this domain, contact directly at:</p>
+        <p>If you'd like to buy this domain, contact directly at:</p>
         <img src="fun.png" alt="Contact">
     </div>
 </body>
