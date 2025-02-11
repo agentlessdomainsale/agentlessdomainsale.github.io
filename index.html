@@ -35,7 +35,12 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let domain = window.location.hostname;
+            let domain = new URLSearchParams(window.location.search).get("domain");
+
+            if (!domain) {
+                domain = "yourdomain.com"; // Fallback, change this if needed
+            }
+
             document.getElementById("domain-name").textContent = domain;
         });
     </script>
@@ -48,3 +53,4 @@
     </div>
 </body>
 </html>
+
